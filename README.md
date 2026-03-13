@@ -1,10 +1,34 @@
-貪吃蛇遊戲
+# Snake Game
 
-1.遊戲地圖包含Snake(紅色方塊)、Food(藍色方塊)、other Snake(綠色方塊)
-2.遊戲含評分機制，初始分數為0
-3.玩家透過WASD控制Snake的移動方向，按一次方向鍵 ，Snake會持續朝該方向自動移動，直到下一次按鍵改變方向
-4.Snake撞到Food，Food消失，Snake長度變長一格，分數加一
-5.Snake撞到Other Snake或是牆壁(邊界)，遊戲結束，並輸出分數
+A simple console-based Snake game.
+
+## Game Elements
+The game map contains the following objects:
+- **Snake** (Red block) – controlled by the player
+- **Food** (Blue block)
+- **Other Snake** (Green block)
+
+## Controls
+- Use **W / A / S / D** keys to control the direction of the snake.
+- Once a direction key is pressed, the snake will continue moving in that direction automatically until another direction key is pressed.
+
+## Game Rules
+1. The initial score is **0**.
+2. When the snake eats **Food**, the food disappears.
+3. The snake **grows by one block** and the **score increases by 1**.
+4. If the snake collides with **Other Snake** or the **wall (boundary)**, the game ends.
+5. The final score will be displayed when the game is over.
+
+## Features
+- Real-time keyboard input control
+- Automatic snake movement
+- Score tracking system
+- Collision detection (wall and other snake)
+
+## Technologies
+- C++
+- Object-Oriented Programming
+- Console rendering with colored blocks
 
 
 
