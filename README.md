@@ -51,8 +51,6 @@ Compile the program:
 make
 ```
 
----
-
 Run the program:
 
 ```bash
