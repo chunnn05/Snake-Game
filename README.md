@@ -29,6 +29,7 @@ The game map contains the following objects:
 - C++
 - Object-Oriented Programming
 - ANSI terminal graphics
+- Makefile build system
 
 ## Compile and Run
 
