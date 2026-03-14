@@ -30,6 +30,37 @@ The game map contains the following objects:
 - Object-Oriented Programming
 - ANSI terminal graphics
 
+## Compile and Run
+
+Before compiling the program, create a separate build directory:
+
+```bash
+mkdir build
+cd build
+```
+
+Generate the build files using CMake:
+
+```bash
+cmake ..
+```
+
+Compile the program:
+
+```bash
+make
+```
+
+---
+
+Run the program:
+
+```bash
+./exec
+```
+
+
+
 
 
 
