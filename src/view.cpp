@@ -49,11 +49,11 @@ void View::updateGameObject(GameObject* obj) {
     RPSGameObject* rpsObj = dynamic_cast<RPSGameObject*>(obj);
 
     if (rpsObj && rpsObj->getType() == SNAKE) {
-        // 蛇的身體，依序畫出每個身體節點
+        
         const std::deque<Position>& body = rpsObj->getBody();
 
         for (const Position& pos : body) {
-            Icon icon = rpsObj->getIcon();  // 蛇身身體圖案，假設同頭部一樣
+            Icon icon = rpsObj->getIcon();  
             for (std::size_t dy = 0; dy < icon.size(); ++dy) {
                 int row = pos.y() + static_cast<int>(dy);
                 if (row < 0 || row >= GAME_WINDOW_HEIGHT) continue;
@@ -70,7 +70,7 @@ void View::updateGameObject(GameObject* obj) {
         }
     }
     else {
-        // 非蛇，維持原本的畫法
+        
         Icon icon = obj->getIcon();
         Position pos  = obj->getPosition();
 
