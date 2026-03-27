@@ -31,7 +31,6 @@ void Controller::run() {
 
 	_objs = GameObjectFactory::create();
 
-	// 找到第一個 Rock 當作初始控制對象
 	for (size_t i = 0; i < _objs.size(); ++i) {
 		if (_objs[i]->getIcon()[0][0].getColor() == RED) {
 			_controlledSnakeIndex = i;
@@ -58,7 +57,7 @@ void Controller::run() {
 		// ESC to exit program
 		if(input==27){
 
-			_view.render(); // 顯示當下畫面
+			_view.render(); 
 			break;
 
 
@@ -73,7 +72,7 @@ void Controller::run() {
 			GameObject* obj = _objs[i];
 			Position oldPos = obj->getPosition();
 
-			//obj->update(); // 所有物件都執行 update，玩家蛇會移動、其他靜止就不會變
+			//obj->update(); 
 
 RPSGameObject* snake = dynamic_cast<RPSGameObject*>(_objs[i]);
 if (i == _controlledSnakeIndex || (snake && snake->getType() == SNAKE)) {
@@ -90,7 +89,7 @@ if (i == _controlledSnakeIndex || (snake && snake->getType() == SNAKE)) {
 							colliderA->onCollision(colliderB);
 colliderB->onCollision(colliderA);
 
-// 加分判斷
+
 if ((colliderA == _objs[_controlledSnakeIndex] && colliderA->didEatFood()) ||
     (colliderB == _objs[_controlledSnakeIndex] && colliderB->didEatFood())) {
     ++_score;
@@ -105,7 +104,7 @@ if ((colliderA == _objs[_controlledSnakeIndex] && colliderA->didEatFood()) ||
 								return;
 							}
 
-							// 玩家蛇碰撞後就不再移動
+							
 							if (i == _controlledSnakeIndex && colliderA->isGameOver()) {
 								return;
 							}
@@ -114,7 +113,7 @@ if ((colliderA == _objs[_controlledSnakeIndex] && colliderA->didEatFood()) ||
 					}
 				}
 
-				obj->setPosition(oldPos); // 撞到就退回
+				obj->setPosition(oldPos); 
 			}
 
 			_view.updateGameObject(obj);
@@ -153,7 +152,7 @@ void Controller::handleInput(int keyInput){
 	// TODO
 	// handle key events.
 
-	// 取得現在控制的 Rock
+	
 
 	RPSGameObject* player = dynamic_cast<RPSGameObject*>(_objs[_controlledSnakeIndex]);
 	if (!player) return;
@@ -174,7 +173,7 @@ void Controller::update(){
 			GameObject* obj = _objs[i];
 			obj->update();
 			if (willCollide(obj->getPosition(),i)) {
-				obj->setPosition(obj->getOldPosition());  // 碰撞就退回
+				obj->setPosition(obj->getOldPosition()); 
 			}
 			_view.updateGameObject(obj);
 		}
