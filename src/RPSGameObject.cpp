@@ -70,10 +70,8 @@ auto *otherObj = dynamic_cast<RPSGameObject*>(other);
     RPSType otherType = otherObj->getType();
 
     if (otherType == FOOD) {
-        // 食物消失
         otherObj->setVisible(false);
 
-        // 蛇下一回合長大
         _grow = true;
 		_ateFood = true;
 
